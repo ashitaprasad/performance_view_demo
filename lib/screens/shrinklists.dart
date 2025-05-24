@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import '../commons.dart';
 
 class WrappedListsPage extends StatefulWidget {
-  const WrappedListsPage({
-    Key? key,
-  }) : super(key: key);
+  const WrappedListsPage({super.key});
 
   @override
-  _WrappedListsPageState createState() => _WrappedListsPageState();
+  State<WrappedListsPage> createState() => _WrappedListsPageState();
 }
 
 class _WrappedListsPageState extends State<WrappedListsPage> {
@@ -37,12 +35,11 @@ class _WrappedListsPageState extends State<WrappedListsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Scenario #1"),
-      ),
+      appBar: AppBar(title: const Text("Scenario #1")),
       body: ListView.builder(
-          itemCount: numLists,
-          itemBuilder: (context, index) => innerLists[index]),
+        itemCount: numLists,
+        itemBuilder: (context, index) => innerLists[index],
+      ),
     );
   }
 }

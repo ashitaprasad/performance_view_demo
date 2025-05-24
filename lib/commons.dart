@@ -4,7 +4,7 @@ import 'dart:math' as math;
 
 @immutable
 class ColorRow extends StatefulWidget {
-  const ColorRow({Key? key}) : super(key: key);
+  const ColorRow({super.key});
 
   @override
   State createState() => ColorRowState();
@@ -27,10 +27,7 @@ class ColorRowState extends State<ColorRow> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            randomColor(),
-            randomColor(),
-          ],
+          colors: [randomColor(), randomColor()],
         ),
       ),
       child: Row(
@@ -46,9 +43,7 @@ class ColorRowState extends State<ColorRow> {
                   padding: const EdgeInsets.all(8),
                   child: Text(
                     lorem(paragraphs: 1, words: 30),
-                    style: const TextStyle(
-                      color: Colors.white,
-                    ),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ],
@@ -60,5 +55,6 @@ class ColorRowState extends State<ColorRow> {
   }
 }
 
-Color randomColor() =>
-    Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+Color randomColor() => Color(
+  (math.Random().nextDouble() * 0xFFFFFF).toInt(),
+).withValues(alpha: 1.0);

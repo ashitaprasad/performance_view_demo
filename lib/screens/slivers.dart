@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import '../commons.dart';
 
 class SliversPage extends StatefulWidget {
-  const SliversPage({
-    Key? key,
-  }) : super(key: key);
+  const SliversPage({super.key});
 
   @override
-  _SliversPageState createState() => _SliversPageState();
+  State<SliversPage> createState() => _SliversPageState();
 }
 
 class _SliversPageState extends State<SliversPage> {
@@ -37,9 +35,7 @@ class _SliversPageState extends State<SliversPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Scenario #2"),
-      ),
+      appBar: AppBar(title: const Text("Scenario #2")),
       body: CustomScrollView(slivers: innerLists),
     );
   }
